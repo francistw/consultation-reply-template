@@ -1,0 +1,456 @@
+{
+  "name": "ERCP",
+  "sections": {
+    "S": [
+      {
+        "type": "radio-group",
+        "id": "past-history",
+        "label": "過去病史",
+        "prefix": "Dear doctor,\\n    We are consulted for ERCP evaluation.\\n\\nPast history:",
+        "suffix": "\n",
+        "options":[
+          {"label": "無", "value": " None", "checked": true},
+          {
+            "label": "有",
+            "value": "",
+            "withInput": true,
+            "detailType": "textarea",
+            "detailPlaceholder": "1. Type 2 diabetes mellitus\n2. Hypertension",
+            "detailSuffix": "\n",
+            "detailIndent": "1"
+          }
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "chief-complaint",
+        "label": "主訴",
+        "prefix": "Chief complaint: ",
+        "options":[
+          {
+            "label": "Abdominal pain",
+            "value": "Abdominal pain for ",
+            "withInput": true,
+            "detailPlaceholder": "1 day",
+            "detailSuffix": "\n",
+            "fullRow": true,
+            "checked": true
+          },
+          {
+            "label": "Right upper abdominal pain",
+            "value": "Right upper abdominal pain for ",
+            "withInput": true,
+            "detailPlaceholder": "1 day",
+            "detailSuffix": "\n",
+            "fullRow": true
+          },
+          {
+            "label": "Other",
+            "value": "",
+            "withInput": true,
+            "detailSuffix": "\n",
+            "fullRow": true
+          }
+        ] 
+      },
+      {
+        "type": "radio-group",
+        "id": "pi-detail1",
+        "label": "現在病史",
+        "prefix": "Present illness:\n",
+        "options": [
+          { "label": "No abdominal pain.", "value": "  - No abdominal pain." },
+          { 
+            "label": "Abdominal pain（填寫部位）",
+            "value": "  - ",
+            "detailValue": "Epigastric and RUQ",
+            "withInput": true,
+            "detailPlaceholder": "RUQ, Epigastric, etc.",
+            "detailSuffix": " pain",
+            "checked": true
+          }
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "pi-detail2",
+        "options":[
+          {"label": "No fever or chills.", "value": "  - No fever or chills.", "checked": true},
+          {"label": "Fever.", "value": "  - Fever."},
+          {"label": "Fever with chills.", "value": "  - Fever with chills."}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "pi-detail3",
+        "options":[
+          {"label": "No nausea or vomiting.", "value": "  - No nausea or vomiting.", "checked": true},
+          {"label": "Nausea without vomiting.", "value": "  - Nausea without vomiting."},
+          {"label": "Both.", "value": "  - Nausea and vomiting noted."},
+          {"label": "Other:", "value": "  - ", "withInput": true, "detailPlaceholder": "Mild nausea without vomiting"}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "pi-detail4",
+        "options":[
+          {"label": "No tea-colored urine or clay-colored stool.", "value": "  - No tea-colored urine or clay-colored stool.", "checked": true},
+          {"label": "Tea-colored urine.", "value": "  - Tea-colored urine."},
+          {"label": "Clay-colored stool.", "value": "  - Clay-colored stool."},
+          {"label": "Both.", "value": "  - Tea-colored urine and clayed-colored stool."}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "pi-detail5",
+        "options":[
+          {"label": "Denies shortness of breath.", "value": "  - Denies shortness of breath.", "checked": true},
+          {"label": "Shortness of breath noted.", "value": "  - Shortness of breath noted."}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "pi-detail6",
+        "options":[
+          {"label": "No radiation of pain to the back.", "value": "  - No radiation of pain to the back.", "checked": true},
+          {"label": "Radiation of pain to the back.", "value": "  - Radiation of pain to the back."}
+        ]
+      },
+      {
+        "type": "textarea",
+        "id": "pi-others",
+        "indent": "2",
+        "placeholder": "- Other present illness."
+      },
+      {
+        "type": "input",
+        "label": "NPO 時間",
+        "prefix": "\n  **NPO since ",
+        "suffix": "**",
+        "value": "2025// :"
+      },
+      {
+        "type": "radio-group",
+        "id": "medication-status",
+        "label": "近期是否使用抗凝血/抗血小板藥物？",
+        "prefix": "",
+        "options": [
+          { "label": "No", "value": "  **No recent use of antiplatelet/anticoagulant agents**", "checked": true },
+          {
+            "label": "Yes",
+            "value": "  **Recent use of antiplatelet/anticoagulant agents: ",
+            "withInput": true,
+            "detailPlaceholder": "clopidogrel until today",
+            "detailSuffix": "**",
+            "fullRow": true
+          }
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "op-status",
+        "label": "是否有腹部手術史？",
+        "prefix": "",
+        "options": [
+          { "label": "No", "value": "  **Denies history of abdominal surgery**", "checked": true },
+          {
+            "label": "Yes",
+            "value": "  **History of abdominal surgery: ",
+            "withInput": true,
+            "detailPlaceholder": "appendectomy in 2020",
+            "detailSuffix": "**",
+            "fullRow": true
+          }
+        ]
+      }
+    ],
+    "O": [
+      {
+        "type": "checkbox-group",
+        "id": "vitals",
+        "label": "生命徵象",
+        "prefix": "Vital signs: ",
+        "suffix": "\n",
+        "separator": ", ",
+        "options": [
+          { "label": "febrile", "value": "febrile" },
+          { "label": "tachycardia", "value": "tachycardia" },
+          { "label": "hypotension", "value": "hypotension" },
+          { "label": "stable", "value": "stable", "checked": true },
+          { "label": "afebrile", "value": "afebrile" },
+          { "label": "other:", "value": "", "withInput": true }
+        ]
+      },
+      {
+        "type": "textarea",
+        "id": "physical-exam",
+        "label": "理學檢查",
+        "placeholder": "理學檢查發現",
+        "indent": "4",
+        "value": "Consciousness: E4V5M6",
+        "prefix": "Physical examination:\n"
+      },
+      {
+        "type": "radio-group",
+        "id": "physical-exam2",
+        "prefix": "    ",
+        "options":[
+          {"label": "No dyspnea", "value": "No dyspnea", "checked": true},
+          {"label": "Mild dyspneic", "value": "Mild dyspneic"},
+          {"label": "Other:", "value": "", "withInput": true, "detailPlaceholder": "其他呼吸狀況"}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "physical-exam3",
+        "options":[
+          {"label": "Pink", "value": "    Pink conjunctivae", "checked": true },
+          {"label": "Pale conjunctivae", "value": "    Pale conjunctivae" }
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "physical-exam4",
+        "options":[
+          {"label": "Anicteric", "value": "    Anicteric sclerae", "checked": true},
+          {"label": "Icteric sclerae", "value": "    Icteric sclerae"}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "physical-exam5",
+        "options":[
+          {"label": "Clear", "value": "    Bilateral clear breathing sounds", "checked": true},
+          {"label": "Coarse breathing sounds", "value": "    Coarse breathing sounds"}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "physical-exam6",
+        "options":[
+          {"label": "Regular", "value": "    Regular heart beats", "checked": true},
+          {"label": "Irregular heart beats", "value": "    Irregular heart beats"}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "physical-exam7",
+        "prefix": "    ",
+        "options":[
+          {"label": "Soft abdomen, no tenderness", "value": "Soft abdomen, no tenderness\n", "checked": true},
+          {
+            "label": "Abdominal tenderness（填寫部位）",
+            "value": "",
+            "detailValue": "Abdominal",
+            "withInput": true,
+            "detailPlaceholder": "RUQ, Epigastric, etc.",
+            "detailSuffix": " tenderness\n"
+          }
+        ]
+      },
+      {
+        "type": "textarea",
+        "id": "labs",
+        "label": "檢驗",
+        "placeholder": "檢驗結果",
+        "indent": "4",
+        "value": "HBV/HCV/tumor markers: no data\n\n",
+        "prefix": "Lab data:\n",
+        "suffix": "\n"
+      },
+      {
+        "type": "textarea",
+        "id": "exams",
+        "label": "檢查",
+        "placeholder": "檢查結果",
+        "indent": "4",
+        "value": "20// CT of abdomen: distal CBD hyperdense lesion with CBD dilatation",
+        "prefix": "Exam:\n"
+      },
+      {
+        "type": "note",
+        "value": "Tokyo Guidelines for Acute Cholangitis 2018",
+        "emphasis": true
+      },
+      {
+        "type": "note",
+        "value": "Part A: systemic inflammation"
+      },
+      {
+        "type": "radio-group",
+        "id": "tokyo-guideline",
+        "label": "Fever (>38°C) and/or shaking chills",
+        "prefix": "\nTokyo guidelines for acute cholangitis 2018:\n    Part A: systemic inflammation\n",
+        "options":[
+          {"label": "Yes", "value": "    (V) Fever (>38°C) and/or shaking chills" },
+          {"label": "No", "value": "    ( ) Fever (>38°C) and/or shaking chills", "checked": true}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "tokyo-guideline2",
+        "prefix": "",
+        "label": "Evidence of inflammatory response (WBC <4 or >10 x1,000/uL and/or CRP >=10 mg/L)",
+        "options":[
+          {"label": "Yes", "value": "    (V) Evidence of inflammatory response (WBC <4 or >10 x1,000/uL and/or CRP >=10 mg/L)" },
+          {"label": "No", "value": "    ( ) Evidence of inflammatory response (WBC <4 or >10 x1,000/uL and/or CRP >=10 mg/L)", "checked": true}
+        ]
+      },
+      {
+        "type": "note",
+        "value": "Part B: cholestasis"
+      },
+      {
+        "type": "radio-group",
+        "id": "tokyo-guideline3",
+        "prefix": "    Part B: cholestasis\n",
+        "label": "Jaundice (total bilirubin >=2 mg/dL)",
+        "options":[
+          {"label": "Yes", "value": "    (V) Jaundice (total bilirubin >=2 mg/dL)" },
+          {"label": "No", "value": "    ( ) Jaundice (total bilirubin >=2 mg/dL)", "checked": true}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "tokyo-guideline4",
+        "prefix": "",
+        "label": "Abnormal liver enzymes (ALP, GGT, AST, ALT levels >1.5 x ULN)",
+        "options":[
+          {"label": "Yes", "value": "    (V) Abnormal liver enzymes (ALP, GGT, AST, ALT levels >1.5 x ULN)" },
+          {"label": "No", "value": "    ( ) Abnormal liver enzymes (ALP, GGT, AST, ALT levels >1.5 x ULN)", "checked": true}
+        ]
+      },
+      {
+        "type": "note",
+        "value": "Part C: imaging"
+      },
+      {
+        "type": "radio-group",
+        "id": "tokyo-guideline5",
+        "prefix": "    Part C: imaging\n",
+        "label": "Biliary dilatation",
+        "options":[
+          {"label": "Yes", "value": "    (V) Biliary dilatation" },
+          {"label": "No", "value": "    ( ) Jaundice (total bilirubin >=2 mg/dL)", "checked": true}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "tokyo-guideline6",
+        "prefix": "",
+        "label": "Evidence of the etiology on imaging (stricture, stone, stent, etc.)",
+        "options":[
+          {"label": "Yes", "value": "    (V) Evidence of the etiology on imaging (stricture, stone, stent, etc.)" },
+          {"label": "No", "value": "    ( ) Evidence of the etiology on imaging (stricture, stone, stent, etc.)", "checked": true}
+        ]
+      },
+      {
+        "type": "note",
+        "value": "Grading:\n    Grade III (dysfunction in >=1 of the following):\n        Cardiovascular dysfunction: hypotension requiring dopamine >=5 g/kg per min or any dose of norepinephrine\n        Neurological dysfunction: disturbance of consciousness\n        Respiratory dysfunction: PaO2/FiO2 ratio <300\n        Renal dysfunction: oliguria or creatinine >2.0 mg/dL\n        Hepatic dysfunction: PT‐INR >1.5\n        Hematological dysfunction: platelet count <100,000/mm3\n    Grade II (>=2 of the following conditions):\n        Abnormal WBC count (>12,000/mm3 or <4,000/mm3)\n        High fever (>=39°C)\n        Age >=75 years\n        Hyperbilirubinemia (total bilirubin >=5 mg/dL)\n        Hypoalbuminemia (<0.7 x ULN, about 3.78 g/dL)\n    Grade I\n        Does not meet the criteria of Grade III or Grade II acute cholangitis at initial diagnosis"
+      },
+      {
+        "type": "radio-group",
+        "id": "tokyo-guideline7",
+        "options":[
+          {"label": "Grade I (mild)", "value": "    Severity grading: grade I (mild)" },
+          {"label": "II (moderate)", "value": "    Severity grading: grade II (moderate)" },
+          {"label": "III (severe)", "value": "    Severity grading: grade III (severe)" },
+          {"label": "不適用（不符膽管炎診斷）", "value": "", "checked": true }
+        ]
+      }
+    ],
+    "A+P": [
+      {
+        "type": "checkbox-group",
+        "id": "assessment",
+        "label": "評估",
+        "prefix": "Impression:\n    ",
+        "separator": "",
+        "options":[
+          {
+            "label": "Mild",
+            "value": "Mild acute cholangitis"
+          },
+          {
+            "label": "Moderate",
+            "value": "Moderate acute cholangitis"
+          },
+          {
+            "label": "Severe acute cholangitis",
+            "value": "Severe acute cholangitis"
+          },
+          {
+            "label": "Obstructive jaundice only（沒有發炎，不符膽管炎診斷）（以上四擇一）",
+            "value": "Obstructive jaundice",
+            "fullRow": true
+          },
+          {
+            "label": "CBD dilatation only",
+            "value": " with CBD dilatation"
+          },
+          {
+            "label": "CBD & IHD dilatation（二擇一）",
+            "value": " with CBD & IHD dilatation"
+          },
+          {
+            "label": "CBD stone",
+            "value": ", likely secondary to choledocholithiasis",
+            "fullRow": true
+          },
+          {
+            "label": "Biliary pancreatitis",
+            "value": ", accompanied by biliary pancreatitis",
+            "fullRow": true
+          },
+          {
+            "label": "No stone (nature to be determined)",
+            "value": ", nature to be determined"
+          },
+          {
+            "label": "其他補充",
+            "value": ", ",
+            "withInput": true,
+            "detailPlaceholder": "complicated with septic shock",
+            "fullRow": true
+          }
+        ] 
+      },
+      {
+        "type": "radio-group",
+        "id": "plan",
+        "label": "處置計畫",
+        "prefix": "\nSuggestion:\n",
+        "options": [
+          {
+            "label": "Emergent ERCP",
+            "value": "",
+            "withInput": true,
+            "detailType": "textarea",
+            "detailSuffix": "\n",
+            "detailIndent": "2",
+            "checked": true,
+            "detailValue": "- Emergent ERCP (endoscopic retrograde cholangiopancreatography) is indicated for acute cholangitis with suspected choledocholithiasis.\n  → Obtain well-informed consent from the patient and family, including indications, benefits, risks (aspiration pneumonia, arrhythmias/cardiovascular events, bleeding, organ perforation, biliary tract infection, post-ERCP pancreatitis, etc.), and alternative managements (conservative treatment, PTCD/PTGBD, surgical intervention, etc.).\n  → If the patient and family understand the procedure, accept the risks, and sign consent, we will proceed with ERCP.\n  → The ERCP exam will be arranged at :.\n  → Maintain NPO status for at least 8 hours with IV fluids before ERCP.\n  → Complete evaluation, including AST, ALT, ALK-P, GGT, T-bil, D-bil, amylase, lipase, INR, aPTT, CRP, albumin, tumor markers (CA 19-9, CEA, AFP), IgG, IgG4, HBsAg, anti-HBs Ab, anti-HBc Ab, anti-HCV if not yet checked.\n  → Avoid the use of anticoagulants/antiplatelet agents if possible, and correct any coagulopathy. Inform the patient and family of the potential thromboembolic risks associated with correction.\n  → Maintain empirical antibiotic therapy and establish IV access before ERCP. Closely monitor the patient's clinical condition and laboratory results.\n  → Inform us immediately if the patient's condition worsens.\n\n  Thank you for your consultation."
+          },
+          {
+            "label": "Elective ERCP",
+            "value": "",
+            "withInput": true,
+            "detailType": "textarea",
+            "detailSuffix": "\n",
+            "detailIndent": "2",
+            "detailValue": "- Elective ERCP (endoscopic retrograde cholangiopancreatography) is indicated for acute cholangitis with suspected choledocholithiasis.\n  → Obtain well-informed consent from the patient and family, including indications, benefits, risks (aspiration pneumonia, arrhythmias/cardiovascular events, bleeding, organ perforation, biliary tract infection, post-ERCP pancreatitis, etc.), and alternative managements (conservative treatment, PTCD/PTGBD, surgical intervention, etc.).\n  → If the patient and family understand the procedure, accept the risks, and sign consent, we will proceed with ERCP.\n  → Please contact the treatment center during business hours on weekdays to schedule the examination.\n  → Maintain NPO status for at least 8 hours with IV fluids before ERCP.\n  → Complete evaluation, including AST, ALT, ALK-P, GGT, T-bil, D-bil, amylase, lipase, INR, aPTT, CRP, albumin, tumor markers (CA 19-9, CEA, AFP), IgG, IgG4, HBsAg, anti-HBs Ab, anti-HBc Ab, anti-HCV if not yet checked.\n  → Avoid the use of anticoagulants/antiplatelet agents if possible, and correct any coagulopathy. Inform the patient and family of the potential thromboembolic risks associated with correction.\n  → Maintain empirical antibiotic therapy and establish IV access before ERCP. Closely monitor the patient's clinical condition and laboratory results.\n  → Inform us immediately if the patient's condition worsens.\n\n  Thank you for your consultation."
+          },
+          {
+            "label": "MRCP",
+            "value": "",
+            "withInput": true,
+            "detailType": "textarea",
+            "detailSuffix": "\n",
+            "detailIndent": "2",
+            "detailValue": "- Arrange MRCP for evaluation of possible etiology.\n- Inform us if the imaging reveals positive findings.\n\n  We will follow up on this patient. Thank you for your consultation."
+          }
+        ]
+      }
+    ]
+  }
+}
