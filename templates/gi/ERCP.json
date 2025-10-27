@@ -1,15 +1,24 @@
 {
   "name": "ERCP",
   "sections": {
+    "Intro": [
+      {
+        "type": "textarea",
+        "label": "Dear Doctor,",
+        "prefix": "Dear Doctor,\n\n",
+        "placeholder": "friendly greeting",
+        "value": "We were consulted for ERCP evaluation."
+      }
+    ],
     "S": [
       {
         "type": "radio-group",
         "id": "past-history",
         "label": "過去病史",
-        "prefix": "Dear doctor,\\n    We are consulted for ERCP evaluation.\\n\\nPast history:",
+        "prefix": "Past history:",
         "suffix": "\n",
         "options":[
-          {"label": "無", "value": " None", "checked": true},
+          {"label": "無", "value": " Denies any systemic disease", "checked": true},
           {
             "label": "有",
             "value": "",
@@ -123,11 +132,19 @@
         "placeholder": "- Other present illness."
       },
       {
-        "type": "input",
+        "type": "radio-group",
         "label": "NPO 時間",
-        "prefix": "\n  **NPO since ",
-        "suffix": "**",
-        "value": "2025// :"
+        "prefix": "",
+        "options": [
+          { "label": "不填寫", "value": " " },
+          {
+            "checked": true,
+            "withInput": true,
+            "detailPrefix": "\n  **NPO since ",
+            "detailSuffix": "**",
+            "detailValue": "2025// :"
+          }
+        ]
       },
       {
         "type": "radio-group",
@@ -141,8 +158,7 @@
             "value": "  **Recent use of antiplatelet/anticoagulant agents: ",
             "withInput": true,
             "detailPlaceholder": "clopidogrel until today",
-            "detailSuffix": "**",
-            "fullRow": true
+            "detailSuffix": "**"
           }
         ]
       },
@@ -158,8 +174,7 @@
             "value": "  **History of abdominal surgery: ",
             "withInput": true,
             "detailPlaceholder": "appendectomy in 2020",
-            "detailSuffix": "**",
-            "fullRow": true
+            "detailSuffix": "**"
           }
         ]
       }
@@ -264,7 +279,7 @@
         "label": "檢查",
         "placeholder": "檢查結果",
         "indent": "4",
-        "value": "20// CT of abdomen: distal CBD hyperdense lesion with CBD dilatation",
+        "value": "2025// CT of abdomen: distal CBD hyperdense lesion with CBD dilatation",
         "prefix": "Exam:\n"
       },
       {
@@ -280,10 +295,11 @@
         "type": "radio-group",
         "id": "tokyo-guideline",
         "label": "Fever (>38°C) and/or shaking chills",
-        "prefix": "\nTokyo guidelines for acute cholangitis 2018:\n    Part A: systemic inflammation\n",
+        "prefix": "",
         "options":[
-          {"label": "Yes", "value": "    (V) Fever (>38°C) and/or shaking chills" },
-          {"label": "No", "value": "    ( ) Fever (>38°C) and/or shaking chills", "checked": true}
+          {"label": "Yes", "value": "\nTokyo guidelines for acute cholangitis 2018:\n    Part A: systemic inflammation\n    (V) Fever (>38°C) and/or shaking chills" },
+          {"label": "No", "value": "\nTokyo guidelines for acute cholangitis 2018:\n    Part A: systemic inflammation\n    ( ) Fever (>38°C) and/or shaking chills" },
+          {"label": "不適用（非膽管炎）", "value": "", "checked": true }
         ]
       },
       {
@@ -293,7 +309,8 @@
         "label": "Evidence of inflammatory response (WBC <4 or >10 x1,000/uL and/or CRP >=10 mg/L)",
         "options":[
           {"label": "Yes", "value": "    (V) Evidence of inflammatory response (WBC <4 or >10 x1,000/uL and/or CRP >=10 mg/L)" },
-          {"label": "No", "value": "    ( ) Evidence of inflammatory response (WBC <4 or >10 x1,000/uL and/or CRP >=10 mg/L)", "checked": true}
+          {"label": "No", "value": "    ( ) Evidence of inflammatory response (WBC <4 or >10 x1,000/uL and/or CRP >=10 mg/L)" },
+          {"label": "不適用", "value": "", "checked": true }
         ]
       },
       {
@@ -303,11 +320,12 @@
       {
         "type": "radio-group",
         "id": "tokyo-guideline3",
-        "prefix": "    Part B: cholestasis\n",
+        "prefix": "",
         "label": "Jaundice (total bilirubin >=2 mg/dL)",
         "options":[
-          {"label": "Yes", "value": "    (V) Jaundice (total bilirubin >=2 mg/dL)" },
-          {"label": "No", "value": "    ( ) Jaundice (total bilirubin >=2 mg/dL)", "checked": true}
+          {"label": "Yes", "value": "    Part B: cholestasis\n    (V) Jaundice (total bilirubin >=2 mg/dL)" },
+          {"label": "No", "value": "    Part B: cholestasis\n    ( ) Jaundice (total bilirubin >=2 mg/dL)"},
+          {"label": "不適用", "value": "", "checked": true }
         ]
       },
       {
@@ -317,7 +335,8 @@
         "label": "Abnormal liver enzymes (ALP, GGT, AST, ALT levels >1.5 x ULN)",
         "options":[
           {"label": "Yes", "value": "    (V) Abnormal liver enzymes (ALP, GGT, AST, ALT levels >1.5 x ULN)" },
-          {"label": "No", "value": "    ( ) Abnormal liver enzymes (ALP, GGT, AST, ALT levels >1.5 x ULN)", "checked": true}
+          {"label": "No", "value": "    ( ) Abnormal liver enzymes (ALP, GGT, AST, ALT levels >1.5 x ULN)" },
+          {"label": "不適用", "value": "", "checked": true }
         ]
       },
       {
@@ -327,11 +346,12 @@
       {
         "type": "radio-group",
         "id": "tokyo-guideline5",
-        "prefix": "    Part C: imaging\n",
+        "prefix": "",
         "label": "Biliary dilatation",
         "options":[
-          {"label": "Yes", "value": "    (V) Biliary dilatation" },
-          {"label": "No", "value": "    ( ) Jaundice (total bilirubin >=2 mg/dL)", "checked": true}
+          {"label": "Yes", "value": "    Part C: imaging\n    (V) Biliary dilatation" },
+          {"label": "No", "value": "    Part C: imaging\n    ( ) Jaundice (total bilirubin >=2 mg/dL)" },
+          {"label": "不適用", "value": "", "checked": true }
         ]
       },
       {
@@ -341,7 +361,8 @@
         "label": "Evidence of the etiology on imaging (stricture, stone, stent, etc.)",
         "options":[
           {"label": "Yes", "value": "    (V) Evidence of the etiology on imaging (stricture, stone, stent, etc.)" },
-          {"label": "No", "value": "    ( ) Evidence of the etiology on imaging (stricture, stone, stent, etc.)", "checked": true}
+          {"label": "No", "value": "    ( ) Evidence of the etiology on imaging (stricture, stone, stent, etc.)"},
+          {"label": "不適用", "value": "", "checked": true }
         ]
       },
       {
@@ -355,63 +376,84 @@
           {"label": "Grade I (mild)", "value": "    Severity grading: grade I (mild)" },
           {"label": "II (moderate)", "value": "    Severity grading: grade II (moderate)" },
           {"label": "III (severe)", "value": "    Severity grading: grade III (severe)" },
-          {"label": "不適用（不符膽管炎診斷）", "value": "", "checked": true }
+          {"label": "不適用", "value": "", "checked": true }
         ]
       }
     ],
     "A+P": [
       {
-        "type": "checkbox-group",
+        "type": "radio-group",
         "id": "assessment",
         "label": "評估",
-        "prefix": "Impression:\n    ",
+        "prefix": "Impression:\n",
         "separator": "",
         "options":[
           {
             "label": "Mild",
-            "value": "Mild acute cholangitis"
+            "value": "    Mild acute cholangitis"
           },
           {
             "label": "Moderate",
-            "value": "Moderate acute cholangitis"
+            "value": "    Moderate acute cholangitis"
           },
           {
             "label": "Severe acute cholangitis",
-            "value": "Severe acute cholangitis"
+            "value": "    Severe acute cholangitis"
           },
           {
-            "label": "Obstructive jaundice only（沒有發炎，不符膽管炎診斷）（以上四擇一）",
-            "value": "Obstructive jaundice",
-            "fullRow": true
+            "label": "Obstructive jaundice（非膽管炎）",
+            "value": "    Obstructive jaundice"
           },
+          {
+            "label": "其他診斷",
+            "value": "",
+            "withInput": true,
+            "detailIndent": 4,
+            "detailType": "textarea",
+            "detailPlaceholder": "Diagnosis A\nDiagnosis B"
+          }
+        ] 
+      },
+      {
+        "type": "radio-group",
+        "separator": "",
+        "joiner": " ",
+        "options":[
           {
             "label": "CBD dilatation only",
-            "value": " with CBD dilatation"
+            "value": "with CBD dilatation"
           },
           {
-            "label": "CBD & IHD dilatation（二擇一）",
-            "value": " with CBD & IHD dilatation"
+            "label": "CBD & IHD dilatation",
+            "value": "with CBD & IHD dilatation"
           },
+          {
+            "label": "不適用",
+            "value": ""
+          }
+        ] 
+      },
+      {
+        "type": "checkbox-group",
+        "joiner": ", ",
+        "options":[
           {
             "label": "CBD stone",
-            "value": ", likely secondary to choledocholithiasis",
-            "fullRow": true
+            "value": "likely secondary to choledocholithiasis"
           },
           {
             "label": "Biliary pancreatitis",
-            "value": ", accompanied by biliary pancreatitis",
-            "fullRow": true
+            "value": "accompanied by biliary pancreatitis"
           },
           {
-            "label": "No stone (nature to be determined)",
-            "value": ", nature to be determined"
+            "label": "Nature to be determined",
+            "value": "nature to be determined"
           },
           {
             "label": "其他補充",
-            "value": ", ",
+            "value": "",
             "withInput": true,
-            "detailPlaceholder": "complicated with septic shock",
-            "fullRow": true
+            "detailPlaceholder": "complicated with septic shock"
           }
         ] 
       },
@@ -429,7 +471,7 @@
             "detailSuffix": "\n",
             "detailIndent": "2",
             "checked": true,
-            "detailValue": "- Emergent ERCP (endoscopic retrograde cholangiopancreatography) is indicated for acute cholangitis with suspected choledocholithiasis.\n  → Obtain well-informed consent from the patient and family, including indications, benefits, risks (aspiration pneumonia, arrhythmias/cardiovascular events, bleeding, organ perforation, biliary tract infection, post-ERCP pancreatitis, etc.), and alternative managements (conservative treatment, PTCD/PTGBD, surgical intervention, etc.).\n  → If the patient and family understand the procedure, accept the risks, and sign consent, we will proceed with ERCP.\n  → The ERCP exam will be arranged at :.\n  → Maintain NPO status for at least 8 hours with IV fluids before ERCP.\n  → Complete evaluation, including AST, ALT, ALK-P, GGT, T-bil, D-bil, amylase, lipase, INR, aPTT, CRP, albumin, tumor markers (CA 19-9, CEA, AFP), IgG, IgG4, HBsAg, anti-HBs Ab, anti-HBc Ab, anti-HCV if not yet checked.\n  → Avoid the use of anticoagulants/antiplatelet agents if possible, and correct any coagulopathy. Inform the patient and family of the potential thromboembolic risks associated with correction.\n  → Maintain empirical antibiotic therapy and establish IV access before ERCP. Closely monitor the patient's clinical condition and laboratory results.\n  → Inform us immediately if the patient's condition worsens.\n\n  Thank you for your consultation."
+            "detailValue": "- Emergent ERCP (endoscopic retrograde cholangiopancreatography) is indicated for acute cholangitis with suspected choledocholithiasis.\n  → Obtain well-informed consent from the patient and family, including indications, benefits, risks (aspiration pneumonia, arrhythmias/cardiovascular events, bleeding, organ perforation, biliary tract infection, post-ERCP pancreatitis, etc.), and alternative managements (conservative treatment, PTCD/PTGBD, surgical intervention, etc.).\n  → If the patient and family understand the procedure, accept the risks, and sign consent, we will proceed with ERCP.\n  → Maintain NPO status for at least 8 hours with IV fluids before ERCP.\n  → Complete evaluation, including AST, ALT, ALK-P, GGT, T-bil, D-bil, amylase, lipase, INR, aPTT, CRP, albumin, tumor markers (CA 19-9, CEA, AFP), IgG, IgG4, HBsAg, anti-HBs Ab, anti-HBc Ab, anti-HCV if not yet checked.\n  → Avoid the use of anticoagulants/antiplatelet agents if possible, and correct any coagulopathy. Inform the patient and family of the potential thromboembolic risks associated with correction.\n  → Maintain empirical antibiotic therapy and establish IV access before ERCP. Closely monitor the patient's clinical condition and laboratory results.\n  → Inform us immediately if the patient's condition worsens.\n\n  Thank you for your consultation."
           },
           {
             "label": "Elective ERCP",
@@ -438,7 +480,7 @@
             "detailType": "textarea",
             "detailSuffix": "\n",
             "detailIndent": "2",
-            "detailValue": "- Elective ERCP (endoscopic retrograde cholangiopancreatography) is indicated for acute cholangitis with suspected choledocholithiasis.\n  → Obtain well-informed consent from the patient and family, including indications, benefits, risks (aspiration pneumonia, arrhythmias/cardiovascular events, bleeding, organ perforation, biliary tract infection, post-ERCP pancreatitis, etc.), and alternative managements (conservative treatment, PTCD/PTGBD, surgical intervention, etc.).\n  → If the patient and family understand the procedure, accept the risks, and sign consent, we will proceed with ERCP.\n  → Please contact the treatment center during business hours on weekdays to schedule the examination.\n  → Maintain NPO status for at least 8 hours with IV fluids before ERCP.\n  → Complete evaluation, including AST, ALT, ALK-P, GGT, T-bil, D-bil, amylase, lipase, INR, aPTT, CRP, albumin, tumor markers (CA 19-9, CEA, AFP), IgG, IgG4, HBsAg, anti-HBs Ab, anti-HBc Ab, anti-HCV if not yet checked.\n  → Avoid the use of anticoagulants/antiplatelet agents if possible, and correct any coagulopathy. Inform the patient and family of the potential thromboembolic risks associated with correction.\n  → Maintain empirical antibiotic therapy and establish IV access before ERCP. Closely monitor the patient's clinical condition and laboratory results.\n  → Inform us immediately if the patient's condition worsens.\n\n  Thank you for your consultation."
+            "detailValue": "- Elective ERCP (endoscopic retrograde cholangiopancreatography) is indicated for acute cholangitis with suspected choledocholithiasis.\n  → Obtain well-informed consent from the patient and family, including indications, benefits, risks (aspiration pneumonia, arrhythmias/cardiovascular events, bleeding, organ perforation, biliary tract infection, post-ERCP pancreatitis, etc.), and alternative managements (conservative treatment, PTCD/PTGBD, surgical intervention, etc.).\n  → If the patient and family understand the procedure, accept the risks, and sign consent, we will proceed with ERCP.\n  → Maintain NPO status for at least 8 hours with IV fluids before ERCP.\n  → Complete evaluation, including AST, ALT, ALK-P, GGT, T-bil, D-bil, amylase, lipase, INR, aPTT, CRP, albumin, tumor markers (CA 19-9, CEA, AFP), IgG, IgG4, HBsAg, anti-HBs Ab, anti-HBc Ab, anti-HCV if not yet checked.\n  → Avoid the use of anticoagulants/antiplatelet agents if possible, and correct any coagulopathy. Inform the patient and family of the potential thromboembolic risks associated with correction.\n  → Maintain empirical antibiotic therapy and establish IV access before ERCP. Closely monitor the patient's clinical condition and laboratory results.\n  → Inform us immediately if the patient's condition worsens.\n\n  Thank you for your consultation."
           },
           {
             "label": "MRCP",

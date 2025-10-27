@@ -1,15 +1,24 @@
 {
   "name": "Foreign body removal",
   "sections": {
+    "Intro": [
+      {
+        "type": "textarea",
+        "label": "Dear Doctor,",
+        "prefix": "Dear Doctor,\n\n",
+        "placeholder": "friendly greeting",
+        "value": "We were consulted for endoscopic foreign body removal."
+      }
+    ],
     "S": [
       {
         "type": "radio-group",
         "id": "past-history",
         "label": "過去病史",
-        "prefix": "Dear doctor,\\n    We are consulted for foreign body removal.\\n\\nPast history:",
+        "prefix": "Past history:",
         "suffix": "\n",
         "options":[
-          {"label": "無", "value": " None", "checked": true},
+          {"label": "無", "value": " Denies any systemic disease", "checked": true},
           {
             "label": "有",
             "value": "",
@@ -28,7 +37,7 @@
         "placeholder": "主訴",
         "prefix": "Chief complaint: ",
         "suffix": "\n",
-        "value": "Accidental foreign body (?) ingestion around 2025// :"
+        "value": "Accidental foreign body () ingestion around 2025// :"
       },
       {
         "type": "checkbox-group",
@@ -46,7 +55,8 @@
         "id": "pi-detail2",
         "options":[
           {"label": "No hoarseness, sore throat, or dysphagia.", "value": "  - No hoarseness, sore throat, or dysphagia.", "checked": true},
-          {"label": "Mild hoarseness, sore throat, and dysphagia.", "value": "  - Mild hoarseness, sore throat, and dysphagia."}
+          {"label": "Mild hoarseness, sore throat, and dysphagia.", "value": "  - Mild hoarseness, sore throat, and dysphagia."},
+          {"label": "Other:", "value": "  - ", "withInput": true, "detailPlaceholder": ""}
         ]
       },
       {
@@ -54,7 +64,8 @@
         "id": "pi-detail3",
         "options":[
           {"label": "No nausea, vomiting, diarrhea, constipation, dizziness, or cough.", "value": "  - No nausea, vomiting, diarrhea, constipation, dizziness, or cough.", "checked": true},
-          {"label": "Mild nausea without vomiting.", "value": "  - Mild nausea without vomiting."}
+          {"label": "Mild nausea without vomiting.", "value": "  - Mild nausea without vomiting."},
+          {"label": "Other:", "value": "  - ", "withInput": true, "detailPlaceholder": ""}
         ]
       },
       {
@@ -62,7 +73,8 @@
         "id": "pi-detail4",
         "options":[
           {"label": "Denies shortness of breath or chest tightness.", "value": "  - Denies shortness of breath or chest tightness.", "checked": true},
-          {"label": "Mild shortness of breath.", "value": "  - Mild shortness of breath."}
+          {"label": "Mild shortness of breath.", "value": "  - Mild shortness of breath."},
+          {"label": "Other:", "value": "  - ", "withInput": true, "detailPlaceholder": ""}
         ]
       },
       {
@@ -74,11 +86,19 @@
         "prefix": ""
       },
       {
-        "type": "input",
+        "type": "radio-group",
         "label": "NPO 時間",
-        "prefix": "\n  **NPO since ",
-        "suffix": "**",
-        "value": "2025// :"
+        "prefix": "",
+        "options": [
+          { "label": "不填寫", "value": " " },
+          {
+            "checked": true,
+            "withInput": true,
+            "detailPrefix": "\n  **NPO since ",
+            "detailSuffix": "**",
+            "detailValue": "2025// :"
+          }
+        ]
       },
       {
         "type": "radio-group",
@@ -92,8 +112,7 @@
             "value": "  **Recent use of antiplatelet/anticoagulant agents: ",
             "withInput": true,
             "detailPlaceholder": "clopidogrel until today",
-            "detailSuffix": "**",
-            "fullRow": true
+            "detailSuffix": "**"
           }
         ]
       }
@@ -225,7 +244,7 @@
             "detailSuffix": "\n",
             "checked": true,
             "detailIndent": "2",
-            "detailValue": "- EGD (esophagogastroduodenoscopy) is indicated for foreign body removal.\n  → Obtain well-informed consent from the patient and family, including indications, risks (aspiration pneumonia, arrhythmias/cardiovascular events, bleeding, organ perforation, etc.), and alternative managements (surgical/conservative treatment).\n  → Explained to the patient and family about the risks and the reasons for the timing of EGD arrangement. Also informed them that the foreign body might have already migrated beyond the reachable depth during the procedure, making retrieval impossible. The patient and family expressed understanding.\n  → If the patient and family understand the procedure, accept the risks, and sign consent, we will proceed with EGD.\n  → The portable EGD exam will be arranged at .\n  → Maintain NPO status before EGD.\n  → Inform us immediately if bleeding or other GI conditions worsen.\n\n  Thank you for your consultation."
+            "detailValue": "- EGD (esophagogastroduodenoscopy) is indicated for foreign body removal.\n  → Obtain well-informed consent from the patient and family, including indications, risks (aspiration pneumonia, arrhythmias/cardiovascular events, bleeding, organ perforation, etc.), and alternative managements (surgical/conservative treatment).\n  → Explained to the patient and family about the risks and the reasons for the timing of EGD arrangement. Also informed them that the foreign body might have already migrated beyond the reachable depth during the procedure, making retrieval impossible. The patient and family expressed understanding.\n  → If the patient and family understand the procedure, accept the risks, and sign consent, we will proceed with EGD.\n  → Maintain NPO status before EGD.\n  → Inform us immediately if bleeding or other GI conditions worsen.\n\n  Thank you for your consultation."
           },
           {
             "label": "內視鏡治療中心",
@@ -234,7 +253,7 @@
             "detailType": "textarea",
             "detailSuffix": "\n",
             "detailIndent": "2",
-            "detailValue": "- EGD (esophagogastroduodenoscopy) is indicated for foreign body removal.\n  → Obtain well-informed consent from the patient and family, including indications, risks (aspiration pneumonia, arrhythmias/cardiovascular events, bleeding, organ perforation, etc.), and alternative managements (surgical/conservative treatment).\n  → Explained to the patient and family about the risks and the reasons for the timing of EGD arrangement. Also informed them that the foreign body might have already migrated beyond the reachable depth during the procedure, making retrieval impossible. The patient and family expressed understanding.\n  → If the patient and family understand the procedure, accept the risks, and sign consent, we will proceed with EGD.\n  → Please contact the treatment center during business hours tomorrow morning to schedule the examination.\n  → Maintain NPO status before EGD.\n  → Inform us immediately if bleeding or other GI conditions worsen.\n\n  Thank you for your consultation."
+            "detailValue": "- EGD (esophagogastroduodenoscopy) is indicated for foreign body removal.\n  → Obtain well-informed consent from the patient and family, including indications, risks (aspiration pneumonia, arrhythmias/cardiovascular events, bleeding, organ perforation, etc.), and alternative managements (surgical/conservative treatment).\n  → Explained to the patient and family about the risks and the reasons for the timing of EGD arrangement. Also informed them that the foreign body might have already migrated beyond the reachable depth during the procedure, making retrieval impossible. The patient and family expressed understanding.\n  → If the patient and family understand the procedure, accept the risks, and sign consent, we will proceed with EGD.\n  → Maintain NPO status before EGD.\n  → Inform us immediately if bleeding or other GI conditions worsen.\n\n  Thank you for your consultation."
           },
           {
             "label": "ENT 硬式食道鏡",
