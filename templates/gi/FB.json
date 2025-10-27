@@ -1,0 +1,252 @@
+{
+  "name": "Foreign body removal",
+  "sections": {
+    "S": [
+      {
+        "type": "radio-group",
+        "id": "past-history",
+        "label": "過去病史",
+        "prefix": "Dear doctor,\\n    We are consulted for foreign body removal.\\n\\nPast history:",
+        "suffix": "\n",
+        "options":[
+          {"label": "無", "value": " None", "checked": true},
+          {
+            "label": "有",
+            "value": "",
+            "withInput": true,
+            "detailType": "textarea",
+            "detailPlaceholder": "1. Type 2 diabetes mellitus\n2. Hypertension",
+            "detailSuffix": "\n",
+            "detailIndent": "1"
+          }
+        ]
+      },
+      {
+        "type": "input",
+        "id": "chief-complaint",
+        "label": "主訴",
+        "placeholder": "主訴",
+        "prefix": "Chief complaint: ",
+        "suffix": "\n",
+        "value": "Accidental foreign body (?) ingestion around 2025// :"
+      },
+      {
+        "type": "checkbox-group",
+        "id": "pi-detail1",
+        "label": "現在病史",
+        "prefix": "Present illness:\n",
+        "separator": "\n",
+        "options": [
+          { "label": "Foreign body sensation at neck and retrosternal area.", "value": "  - Foreign body sensation at neck and retrosternal area.", "checked": true, "fullRow": true },
+          { "label": "No fever or chills.", "value": "  - No fever or chills.", "checked": true, "fullRow": true }
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "pi-detail2",
+        "options":[
+          {"label": "No hoarseness, sore throat, or dysphagia.", "value": "  - No hoarseness, sore throat, or dysphagia.", "checked": true},
+          {"label": "Mild hoarseness, sore throat, and dysphagia.", "value": "  - Mild hoarseness, sore throat, and dysphagia."}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "pi-detail3",
+        "options":[
+          {"label": "No nausea, vomiting, diarrhea, constipation, dizziness, or cough.", "value": "  - No nausea, vomiting, diarrhea, constipation, dizziness, or cough.", "checked": true},
+          {"label": "Mild nausea without vomiting.", "value": "  - Mild nausea without vomiting."}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "pi-detail4",
+        "options":[
+          {"label": "Denies shortness of breath or chest tightness.", "value": "  - Denies shortness of breath or chest tightness.", "checked": true},
+          {"label": "Mild shortness of breath.", "value": "  - Mild shortness of breath."}
+        ]
+      },
+      {
+        "type": "textarea",
+        "id": "pi-others",
+        "label": "其他現在病史",
+        "indent": "2",
+        "placeholder": "- Other present illness",
+        "prefix": ""
+      },
+      {
+        "type": "input",
+        "label": "NPO 時間",
+        "prefix": "\n  **NPO since ",
+        "suffix": "**",
+        "value": "2025// :"
+      },
+      {
+        "type": "radio-group",
+        "id": "medication-status",
+        "label": "近期是否使用抗凝血/抗血小板藥物？",
+        "prefix": "",
+        "options": [
+          { "label": "No", "value": "  **No recent use of antiplatelet/anticoagulant agents**", "checked": true },
+          {
+            "label": "Yes",
+            "value": "  **Recent use of antiplatelet/anticoagulant agents: ",
+            "withInput": true,
+            "detailPlaceholder": "clopidogrel until today",
+            "detailSuffix": "**",
+            "fullRow": true
+          }
+        ]
+      }
+    ],
+    "O": [
+      {
+        "type": "checkbox-group",
+        "id": "vitals",
+        "label": "生命徵象",
+        "prefix": "Vital signs: ",
+        "suffix": "\n",
+        "separator": ", ",
+        "options": [
+          { "label": "tachycardia", "value": "tachycardia" },
+          { "label": "hypotension", "value": "hypotension" },
+          { "label": "stable", "value": "stable", "checked": true },
+          { "label": "other:", "value": "", "withInput": true }
+        ]
+      },
+      {
+        "type": "textarea",
+        "id": "physical-exam",
+        "label": "理學檢查",
+        "placeholder": "理學檢查發現",
+        "value": "Consciousness: E4V5M6",
+        "indent": "4",
+        "prefix": "Physical examination:\n"
+      },
+      {
+        "type": "radio-group",
+        "id": "physical-exam2",
+        "prefix": "    ",
+        "options":[
+          {"label": "No dyspnea", "value": "No dyspnea", "checked": true},
+          {"label": "Mild dyspneic", "value": "Mild dyspneic"},
+          {"label": "Others:", "value": "", "withInput": true, "detailPlaceholder": "其他呼吸狀況"}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "physical-exam3",
+        "options":[
+          {"label": "Pink", "value": "    Pink conjunctivae", "checked": true},
+          {"label": "Pale conjunctivae", "value": "    Pale conjunctivae"}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "physical-exam4",
+        "options":[
+          {"label": "Anicteric", "value": "    Anicteric sclerae", "checked": true},
+          {"label": "Icteric sclerae", "value": "    Icteric sclerae"}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "physical-exam5",
+        "options":[
+          {"label": "Clear", "value": "    Bilateral clear breathing sounds", "checked": true},
+          {"label": "Coarse breathing sounds", "value": "    Coarse breathing sounds"}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "physical-exam6",
+        "options":[
+          {"label": "Regular", "value": "    Regular heart beats", "checked": true},
+          {"label": "Irregular heart beats", "value": "    Irregular heart beats"}
+        ]
+      },
+      {
+        "type": "radio-group",
+        "id": "physical-exam7",
+        "prefix": "    ",
+        "options":[
+          {"label": "Soft abdomen, no tenderness", "value": "Soft abdomen, no tenderness\n", "checked": true},
+          {
+            "label": "Abdominal tenderness（填寫部位）",
+            "value": "",
+            "detailValue": "Abdominal",
+            "withInput": true,
+            "detailPlaceholder": "RUQ, Epigastric, etc.",
+            "detailSuffix": " tenderness\n"
+          }
+        ]
+      },
+      {
+        "type": "textarea",
+        "id": "labs",
+        "label": "檢驗",
+        "placeholder": "檢驗結果",
+        "value": "nil",
+        "indent": "4",
+        "prefix": "Lab data:\n",
+        "suffix": "\n"
+      },
+      {
+        "type": "textarea",
+        "id": "exams",
+        "label": "檢查",
+        "placeholder": "檢查結果",
+        "indent": "4",
+        "value": "Plain film: no obvious pneumomediastinum or pneumoperitoneum.\nENT fibroscopy: negative finding.",
+        "prefix": "Exam:\n"
+      }
+    ],
+    "A+P": [
+      {
+        "type": "textarea",
+        "id": "assessment",
+        "label": "評估",
+        "placeholder": "列出診斷或問題清單",
+        "value": "Accidental foreign body () ingestion",
+        "indent": "4",
+        "prefix": "Impression:\n",
+        "suffix": "\n"
+      },
+      {
+        "type": "radio-group",
+        "id": "plan",
+        "label": "處置計畫",
+        "prefix": "Suggestion:\n",
+        "options": [
+          {
+            "label": "Portable EGD",
+            "value": "",
+            "withInput": true,
+            "detailType": "textarea",
+            "detailSuffix": "\n",
+            "checked": true,
+            "detailIndent": "2",
+            "detailValue": "- EGD (esophagogastroduodenoscopy) is indicated for foreign body removal.\n  → Obtain well-informed consent from the patient and family, including indications, risks (aspiration pneumonia, arrhythmias/cardiovascular events, bleeding, organ perforation, etc.), and alternative managements (surgical/conservative treatment).\n  → Explained to the patient and family about the risks and the reasons for the timing of EGD arrangement. Also informed them that the foreign body might have already migrated beyond the reachable depth during the procedure, making retrieval impossible. The patient and family expressed understanding.\n  → If the patient and family understand the procedure, accept the risks, and sign consent, we will proceed with EGD.\n  → The portable EGD exam will be arranged at .\n  → Maintain NPO status before EGD.\n  → Inform us immediately if bleeding or other GI conditions worsen.\n\n  Thank you for your consultation."
+          },
+          {
+            "label": "內視鏡治療中心",
+            "value": "",
+            "withInput": true,
+            "detailType": "textarea",
+            "detailSuffix": "\n",
+            "detailIndent": "2",
+            "detailValue": "- EGD (esophagogastroduodenoscopy) is indicated for foreign body removal.\n  → Obtain well-informed consent from the patient and family, including indications, risks (aspiration pneumonia, arrhythmias/cardiovascular events, bleeding, organ perforation, etc.), and alternative managements (surgical/conservative treatment).\n  → Explained to the patient and family about the risks and the reasons for the timing of EGD arrangement. Also informed them that the foreign body might have already migrated beyond the reachable depth during the procedure, making retrieval impossible. The patient and family expressed understanding.\n  → If the patient and family understand the procedure, accept the risks, and sign consent, we will proceed with EGD.\n  → Please contact the treatment center during business hours tomorrow morning to schedule the examination.\n  → Maintain NPO status before EGD.\n  → Inform us immediately if bleeding or other GI conditions worsen.\n\n  Thank you for your consultation."
+          },
+          {
+            "label": "ENT 硬式食道鏡",
+            "value": "",
+            "withInput": true,
+            "detailType": "textarea",
+            "detailSuffix": "\n",
+            "detailIndent": "2",
+            "detailValue": "- Because the foreign body is impacted at a high cervical level, EGD (esophagogastroduodenoscopy) carries a significantly increased risk of perforation, choking, or tracheal aspiration due to the limited visualization of the cervical esophagus (inlet area). Please contact the ENT surgeons for evaluation and consideration of rigid esophagoscopic removal under general anesthesia for this high-level esophageal foreign body impaction.\n\n  Thank you for your consultation."
+          }
+        ]
+      }
+    ]
+  }
+}

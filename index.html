@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>會診回覆範本</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>會診回覆範本</h1>
+      <p>選擇範本並填寫資料，完成後可分別複製 S、O、A+P 三個區塊或全部複製。</p>
+      <div class="app__controls">
+        <label class="template-selector">
+          <span>科別：</span>
+          <select id="division-select">
+            <option value="" disabled selected>請選擇科別</option>
+          </select>
+        </label>
+        <label class="template-selector">
+          <span>範本：</span>
+          <select id="template-select" disabled>
+            <option value="" disabled selected>請先選擇科別</option>
+          </select>
+        </label>
+        <button type="button" id="copy-all-button" class="copy-all-button js-copy-all" disabled>
+          複製全部
+        </button>
+      </div>
+    </header>
+
+    <section id="sections" class="sections" aria-live="polite">
+      <p class="placeholder">請先選擇範本。</p>
+    </section>
+
+    <footer class="app__footer">
+      <button type="button" class="copy-all-button copy-all-button--footer js-copy-all" disabled>複製全部</button>
+      <br/>
+      <small>⚠︎ 範本內容僅供參考，請依臨床實際情況與院內規範調整。</small>
+      <br/>
+      <small>© 2025 👨‍⚕️francistw. Licensed under MIT. <a href="https://github.com/francistw/consultation-reply-template">Source code</a></small>
+    </footer>
+  </main>
+
+  <template id="section-template">
+    <section class="section">
+      <div class="section__header">
+        <h2></h2>
+        <button type="button" class="copy-button">複製</button>
+      </div>
+      <div class="section__body"></div>
+    </section>
+  </template>
+
+  <template id="field-text-template">
+    <p class="field field--text"></p>
+  </template>
+
+  <template id="field-input-template">
+    <label class="field field--input">
+      <span class="field__label"></span>
+      <input type="text" />
+    </label>
+  </template>
+
+  <template id="field-textarea-template">
+    <label class="field field--textarea">
+      <span class="field__label"></span>
+      <textarea rows="3"></textarea>
+    </label>
+  </template>
+
+  <template id="field-checkbox-template">
+    <fieldset class="field field--checkbox">
+      <legend class="field__label"></legend>
+      <div class="field__options"></div>
+    </fieldset>
+  </template>
+
+  <template id="field-radio-template">
+    <fieldset class="field field--radio">
+      <legend class="field__label"></legend>
+      <div class="field__options"></div>
+    </fieldset>
+  </template>
+
+  <template id="field-note-template">
+    <div class="field field--note">
+      <p class="field__note"></p>
+    </div>
+  </template>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
