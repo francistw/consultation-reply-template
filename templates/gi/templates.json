@@ -1,6 +1,6 @@
 {
   "templates": [
-    { "name": "請選擇範本", "file": null },
+    { "name": "" },
     { "name": "ERCP", "file": "ERCP.json" },
     { "name": "Foreign body removal", "file": "FB.json" }
   ]
